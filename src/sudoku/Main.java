@@ -10,14 +10,13 @@ public class Main {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		do {
-
 			System.out.println(sudoku.toString());
 			System.out.println(
 					"Entra la fila, columna i numero a afegir separats  per una coma (o qualsevol altre caràcter). \n Exemple:   2,3,5 \n Entra un 0 com a ultim valor per esborrar la posicio indicada.");
 			System.out.println("");
 			try {	
 				input = br.readLine();
-				if(input.length()<4) throw new IllegalArgumentException("Dades insuficients");
+				if(input.length()!=5) throw new IllegalArgumentException("ERROR: Format de dades incorrecte");
 				sudoku.afegirNumero(input.charAt(0),input.charAt(2),input.charAt(4));
 				System.out.println("");
 			} catch (IOException e) {
