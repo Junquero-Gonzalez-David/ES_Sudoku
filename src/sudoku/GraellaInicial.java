@@ -78,10 +78,11 @@ public class GraellaInicial {
 
 	public boolean isComplete() {
 		for (int i = 0; i < graella.length; i++) {
-			for (int j = 0; j < graella[i].length; i++) {
+			for (int j = 0; j < graella[i].length; j++) {
 				if (graella[i][j].getValor() == '?')
 					return false;
 			}
-	} return true;
-}
+	    } 
+		return true;
+	}
 }

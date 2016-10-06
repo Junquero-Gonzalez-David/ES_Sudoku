@@ -22,11 +22,11 @@ public class Main {
 			} catch (IOException e) {
 				System.out.println("Ha sorgit un problema inesperat amb la lectura de la linia. \n" + e.getMessage()+ '\n');
 			}
-		 catch (IllegalArgumentException e) {
-			System.out.println("Ha sorgit un problema amb la lectura de dades. El format no es correcte o la posició indicada no es permesa. \n " + e.getMessage()+'\n');
-		}
-			
+			  catch (IllegalArgumentException e) {
+				System.out.println("Ha sorgit un problema amb la lectura de dades. El format no es correcte o la posició indicada no es permesa. \n " + e.getMessage()+'\n');
+		 	}	
 		} while (!sudoku.isComplete());
+		System.out.println("Sudoku Completat!");
 	}
 }
 
