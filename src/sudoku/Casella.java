@@ -5,9 +5,11 @@ public class Casella {
 	private boolean restricted; // si és o no valor inicial, per tant restringit
 	private int area;
 	
+	
+	
 	public Casella (char valor, int x,int y){
 		this.valor = valor;
-		if(valor=='?'){
+		if(valor==Sudoku.getEmptyValue()){
 			this.restricted = false;
 		} else {		   
 			this.restricted = true;
@@ -23,10 +25,15 @@ public class Casella {
 		else if(y<6&&x<9) this.area = 8;
 		else if(y<9&&x<9) this.area = 9;
 	}
+
 	public void setValor(char nouValor){
 		if(restricted) throw new IllegalArgumentException("No pots modificar els numeros inicials");
-		else if(nouValor == '0') this.valor = '?'; // If nouValor is 0, delete that position
+		else if(nouValor == '0') this.valor = Sudoku.getEmptyValue(); // If nouValor is 0, delete that position
 		else this.valor = nouValor; 
+	}
+	public void initValue(char nouValor,boolean restricted){
+		 this.restricted = restricted;
+		 this.valor = nouValor; 
 	}
 	public boolean isRestricted () {
 		return this.restricted;
@@ -37,4 +44,5 @@ public class Casella {
 	public int getArea(){
 		return this.area;
 	}
+
 }
